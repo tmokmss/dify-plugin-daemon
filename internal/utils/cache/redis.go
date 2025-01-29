@@ -4,6 +4,7 @@ import (
 	"context"
 	"crypto/tls"
 	"errors"
+	"fmt"
 	"strings"
 	"time"
 
@@ -20,6 +21,8 @@ var (
 )
 
 func InitRedisClient(addr, password string, useSsl bool) error {
+	fmt.Println("redis useSsl:", useSsl)
+	fmt.Println("redis addr:", addr)
 	opts := &redis.Options{
 		Addr:     addr,
 		Password: password,
